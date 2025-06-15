@@ -1,14 +1,15 @@
 import logo from "../assets/Logo.svg";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { EventsArray } from "./Events";
 import { UserContext } from "./UserContext";
 import { useContext } from "react";
 
 const Events = () => {
   const { events } = useContext(UserContext);
+  const navigate = useNavigate();
   const filterarray = [...EventsArray, ...events].sort((a, b) => {
-    const dateA = new Date(a.date);
-    const dateB = new Date(b.date);
+    const dateA = a.StartDate ? new Date(a.StartDate) : new Date();
+    const dateB = b.StartDate ? new Date(b.StartDate) : new Date();
     return dateA.getTime() - dateB.getTime();
   });
   return (
@@ -25,9 +26,10 @@ const Events = () => {
         </form>
         <div className="event-nav">
           <ul className="form-links">
-            <NavLink to={"/"}>Home</NavLink>
             <NavLink to={"/MyEvents"}>My Events</NavLink>
-            <button className="register-btn">Create Event</button>
+            <button className="register-btn" onClick={() => navigate("/Form")}>
+              Create Event
+            </button>
           </ul>
         </div>
       </header>
@@ -44,7 +46,7 @@ const Events = () => {
             return (
               <div className="event" key={event.id}>
                 <div className="event-date">
-                  <time dateTime={event.date}>{event.date}</time>
+                  <time dateTime={event.StartDate}>{event.StartDate}</time>
                   <span className="event-cat">{event.type}</span>
                 </div>
                 <div className="event-content">
@@ -58,7 +60,7 @@ const Events = () => {
                 <div className="event-btn">
                   <button>Join</button>
                   <span>
-                    {event.attendees.length}/{event.capacity} slots
+                    {event.attendees?.length}/{event.capacity} slots
                   </span>
                 </div>
               </div>

@@ -1,19 +1,10 @@
-interface EventData {
-  id: string;
-  title: string;
-  date: string;
-  location: string;
-  type: "academic" | "social" | "career";
-  attendees: string[];
-  capacity: number;
-  description: string;
-}
+import type { EventData } from "./UserContext";
 
 export const EventsArray: EventData[] = [
   {
     id: "CS-FAIR-2023",
     title: "Tech Career Fair",
-    date: "2023-10-15",
+    StartDate: "2023-10-15",
     location: "Student Union",
     type: "career",
     description:
@@ -24,7 +15,7 @@ export const EventsArray: EventData[] = [
   {
     id: "BIO-LAB-2023",
     title: "Biology Lab Tour",
-    date: "2023-10-16",
+    StartDate: "2023-10-16",
     location: "Science Building",
     type: "academic",
     description:
@@ -35,7 +26,7 @@ export const EventsArray: EventData[] = [
   {
     id: "SOCIAL-NIGHT-2023",
     title: "Campus Social Night",
-    date: "2023-10-17",
+    StartDate: "2023-10-17",
     location: "Campus Lounge",
     type: "social",
     description:
@@ -46,7 +37,7 @@ export const EventsArray: EventData[] = [
   {
     id: "RESUME-WORKSHOP-2023",
     title: "Resume Building Workshop",
-    date: "2023-10-18",
+    StartDate: "2023-10-18",
     location: "Career Center",
     type: "career",
     description:
@@ -57,7 +48,7 @@ export const EventsArray: EventData[] = [
   {
     id: "STUDENT-ART-SHOW-2023",
     title: "Student Art Show",
-    date: "2023-10-19",
+    StartDate: "2023-10-19",
     location: "Arts Building",
     type: "social",
     description:
@@ -68,7 +59,7 @@ export const EventsArray: EventData[] = [
   {
     id: "CS-TALK-2023",
     title: "Artificial Intelligence in Medicine",
-    date: "2023-10-20",
+    StartDate: "2023-10-20",
     location: "Lecture Hall A",
     type: "academic",
     description:
@@ -79,7 +70,7 @@ export const EventsArray: EventData[] = [
   {
     id: "RECRUITING-NIGHT-2023",
     title: "Corporate Recruiting Night",
-    date: "2023-10-21",
+    StartDate: "2023-10-21",
     location: "Student Union",
     type: "career",
     description:
@@ -90,7 +81,7 @@ export const EventsArray: EventData[] = [
   {
     id: "MEDITATION-SESSION-2023",
     title: "Mindfulness Meditation",
-    date: "2023-10-22",
+    StartDate: "2023-10-22",
     location: "Wellness Center",
     type: "social",
     description:
@@ -101,7 +92,7 @@ export const EventsArray: EventData[] = [
   {
     id: "SENIOR-PANEL-2023",
     title: "Senior Graduation Panel",
-    date: "2023-10-23",
+    StartDate: "2023-10-23",
     location: "Main Auditorium",
     type: "academic",
     description:
@@ -112,7 +103,7 @@ export const EventsArray: EventData[] = [
   {
     id: "GAME-NIGHT-2023",
     title: "Game Night Extravaganza",
-    date: "2023-10-24",
+    StartDate: "2023-10-24",
     location: "Student Lounge",
     type: "social",
     description:

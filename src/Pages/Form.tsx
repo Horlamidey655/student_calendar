@@ -3,14 +3,22 @@ import logo from "../assets/Logo.svg";
 import "../App.css";
 import { useForm } from "react-hook-form";
 import type { EventData } from "./UserContext";
+import { EventsArray } from "./Events";
 
 const Form = () => {
   const { register, handleSubmit, reset } = useForm();
 
   const submitHandler = (data: EventData) => {
-    console.log(data);
+    EventsArray.push({
+      ...data,
+      capacity: 50,
+      id: Date.now().toString(),
+      attendees: [],
+    });
+    console.log(EventsArray.length);
     reset();
   };
+
   return (
     <>
       <header className="form-header">
@@ -23,7 +31,6 @@ const Form = () => {
         <div className="form-nav">
           <ul className="form-links">
             <NavLink to={"/"}>Home</NavLink>
-            <NavLink to={"/Events"}>Event</NavLink>
             <NavLink to={"/MyEvents"}>My Events</NavLink>
           </ul>
         </div>
@@ -42,8 +49,13 @@ const Form = () => {
             {...register("title")}
             required
           />
-          <input type="text" placeholder="Location" {...register("location")} />
-          <select id="" required {...register("type")}>
+          <input
+            type="text"
+            placeholder="Location"
+            {...register("location")}
+            required
+          />
+          <select id="" required {...register("type")} aria-required="true">
             <option>Select a category</option>
             <option value="Academic">Academic</option>
             <option value="Social">Social</option>
@@ -54,23 +66,44 @@ const Form = () => {
             cols={7}
             rows={7}
             {...register("description")}
+            required
           ></textarea>
           <div className="form-dates">
             <div className="form-date">
               <label htmlFor="start-date">Start Date: </label>
-              <input type="date" id="start-date" {...register("date")} />
+              <input
+                type="date"
+                id="start-date"
+                {...register("StartDate")}
+                required
+              />
             </div>
             <div className="form-date">
               <label htmlFor="end-date">End Date: </label>
-              <input type="date" name="" id="start-date" />
+              <input
+                type="date"
+                id="start-date"
+                {...register("endDate")}
+                required
+              />
             </div>
             <div className="form-date">
               <label htmlFor="start-time">Start Time: </label>
-              <input type="time" name="" id="start-time" />
+              <input
+                type="time"
+                id="start-time"
+                {...register("StartTime")}
+                required
+              />
             </div>
             <div className="form-date">
               <label htmlFor="end-time">End Time: </label>
-              <input type="time" name="" id="end-time" />
+              <input
+                type="time"
+                id="end-time"
+                {...register("endTime")}
+                required
+              />
             </div>
           </div>
           <button type="submit" className="form-submit">

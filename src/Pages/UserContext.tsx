@@ -10,7 +10,10 @@ interface UserContextProps {
 export interface EventData {
   id?: string;
   title?: string;
-  date?: string;
+  StartDate?: string;
+  EndDate?: string;
+  StartTime?: string;
+  EndTime?: string;
   location?: string;
   type?: "academic" | "social" | "career";
   description?: string;

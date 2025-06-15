@@ -1,6 +1,7 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const MyEvents = () => {
+  const navigate = useNavigate();
   return (
     <div className="myEvents">
       <aside className="myEvents-aside">
@@ -15,7 +16,9 @@ const MyEvents = () => {
             My Events
           </NavLink>
         </ul>
-        <button className="register-btn">Create Event</button>
+        <button className="register-btn" onClick={() => navigate("/Form")}>
+          Create Event
+        </button>
       </aside>
       <main className="event-body">
         <h2>My Events</h2>
