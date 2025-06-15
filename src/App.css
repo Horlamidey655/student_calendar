@@ -1,0 +1,273 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+body {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  font-family: "Lexend", sans-serif;
+}
+
+h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+label {
+  font-size: 1.4rem;
+  color: #85909c;
+}
+
+.form-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 4rem;
+  border: 1px solid #e5e8eb;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.form-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.form-body {
+  max-width: 50vw;
+  margin: 0 auto;
+}
+.form-body h2 {
+  margin-block: 2rem 1rem;
+}
+
+.form-content {
+  display: grid;
+  gap: 1rem;
+}
+
+.form-content input,
+select,
+textarea,
+.register-event-input {
+  border-radius: 1.2rem;
+  padding: 1.2rem;
+  border: 1px solid #d1dbe5;
+  outline: none;
+}
+.form-dates {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+  gap: 1rem 1.5rem;
+}
+
+.form-date {
+  display: flex;
+  gap: 1.5rem;
+  border-radius: 1.2rem;
+  padding: 0 1.2rem;
+  border: 1px solid #d1dbe5;
+  outline: none;
+  align-items: center;
+}
+
+.form-date input {
+  border: none;
+}
+.form-submit {
+  background: #388fe5;
+  text-align: center;
+  padding: 1.6rem;
+  border: none;
+  border-radius: 1.2rem;
+  color: white;
+}
+
+.event-nav {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+.search-form input {
+  border-radius: 1.2rem;
+  border: 1px solid #d1dbe5;
+  outline: none;
+  padding: 1rem 3rem;
+  width: 50rem;
+}
+
+.event-body,
+.register-body {
+  max-width: 90rem;
+  margin: 0 auto;
+  margin-block: 2rem;
+  display: grid;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.event-body h2 {
+  margin-block: 0.7rem;
+}
+
+.filter-btns {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: #e6e6e6;
+  padding: 0.5rem;
+  border-radius: 1.2rem;
+}
+
+.filter-btn {
+  padding: 0.5rem;
+  border: none;
+  outline: none;
+  border-radius: 100vw;
+  background: transparent;
+}
+
+.filter-btn.active {
+  background: white;
+}
+
+.events {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+  gap: 1rem;
+}
+.event {
+  padding: 1.5rem;
+  background: white;
+  box-shadow: 0 4px 16px 0 rgba(60, 60, 60, 0.12);
+  border-radius: 1.2rem;
+  display: grid;
+  gap: 3rem;
+}
+.event-date,
+.event-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.event-cat {
+  padding: 0.5rem 1.5rem;
+  border-radius: 100vw;
+  background: #388fe5;
+  color: white;
+  font-size: 1.4rem;
+}
+
+.event-btn button {
+  display: inline-block;
+  border: none;
+  color: white;
+  background: green;
+  border-radius: 100vw;
+  padding: 0.5rem 2rem;
+}
+
+.event-content-location {
+  color: grey;
+}
+.event-content-desc {
+  margin-bottom: 0.8rem;
+}
+
+.back-btn,
+.register-btn {
+  border: none;
+  outline: none;
+  justify-self: start;
+  padding: 1rem 4rem;
+  border-radius: 100vw;
+}
+
+.progress-bar-container {
+  width: 40rem;
+  height: 1rem;
+  background-color: rgb(225, 225, 225);
+  border-radius: 100vw;
+  position: relative;
+}
+
+.progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30%;
+  height: 100%;
+  background: #388fe5;
+  border-radius: 100vw;
+}
+
+.progress {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.register-btn {
+  background: #388fe5;
+  text-align: center;
+  color: white;
+  margin-block: auto;
+}
+.myEvents {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: min-content 1fr;
+  gap: 1rem;
+}
+.myEvents-aside {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  height: 400px;
+  position: sticky;
+  left: 1rem;
+  top: 4.2rem;
+}
+.myEvents-links {
+  display: grid;
+  gap: 1rem;
+}
+
+.events-container {
+  display: grid;
+  gap: 1rem;
+}
+
+.event-link {
+  padding: 0.5rem 3rem;
+  border-radius: 100vw;
+}
+.event-link.active {
+  background: rgb(228, 228, 228);
+}
+.register-event-form {
+  display: grid;
+  gap: 1rem;
+}
+.register-event-input {
+  width: 40rem;
+}
